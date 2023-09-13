@@ -12,7 +12,6 @@ export const iconData = [
     icon: <FaIcons6.FaAmazonPay />,
     category: "Brand",
     filter: "Solid",
-    all: "All",
   },
   {
     id: 2,
@@ -20,7 +19,6 @@ export const iconData = [
     icon: <FaIcons6.FaAirbnb />,
     category: "Brand",
     filter: "Regular",
-    all: "All",
   },
   {
     id: 3,
@@ -28,7 +26,6 @@ export const iconData = [
     icon: <FaIcons6.FaApple />,
     category: "Brand",
     filter: "Light",
-    all: "All",
   },
   {
     id: 4,
@@ -36,7 +33,6 @@ export const iconData = [
     icon: <FaIcons6.FaAlipay />,
     category: "Brand",
     filter: "Thin",
-    all: "All",
   },
   {
     id: 5,
@@ -44,7 +40,6 @@ export const iconData = [
     icon: <FaIcons6.FaAmazon />,
     category: "Brand",
     filter: "Regular",
-    all: "All",
   },
   {
     id: 6,
@@ -52,7 +47,6 @@ export const iconData = [
     icon: <FaIcons6.FaAws />,
     category: "Brand",
     filter: "Thin",
-    all: "All",
   },
   {
     id: 7,
@@ -60,7 +54,6 @@ export const iconData = [
     icon: <FaIcons6.FaBluetooth />,
     category: "Brand",
     filter: "Regular",
-    all: "All",
   },
   {
     id: 8,
@@ -68,7 +61,6 @@ export const iconData = [
     icon: <FaIcons6.FaCss3 />,
     category: "Brand",
     filter: "Light",
-    all: "All",
   },
   {
     id: 9,
@@ -76,7 +68,6 @@ export const iconData = [
     icon: <FaIcons6.FaFacebook />,
     category: "Brand",
     filter: "Solid",
-    all: "All",
   },
   {
     id: 10,
@@ -84,7 +75,6 @@ export const iconData = [
     icon: <FaIcons6.FaGooglePlus />,
     category: "Brand",
     filter: "Regular",
-    all: "All",
   },
   {
     id: 11,
@@ -92,7 +82,6 @@ export const iconData = [
     icon: <PiIcon.PiAirplaneBold />,
     category: "Classic",
     filter: "Light",
-    all: "All",
   },
   {
     id: 12,
@@ -100,7 +89,6 @@ export const iconData = [
     icon: <PiIcon.PiAlarmBold />,
     category: "Classic",
     filter: "Solid",
-    all: "All",
   },
   {
     id: 13,
@@ -108,7 +96,6 @@ export const iconData = [
     icon: <PiIcon.PiBatteryFullBold />,
     category: "Classic",
     filter: "Thin",
-    all: "All",
   },
   {
     id: 14,
@@ -116,7 +103,6 @@ export const iconData = [
     icon: <PiIcon.PiBatteryLowBold />,
     category: "Classic",
     filter: "Thin",
-    all: "All",
   },
   {
     id: 15,
@@ -124,7 +110,6 @@ export const iconData = [
     icon: <PiIcon.PiBoneBold />,
     category: "Classic",
     filter: "Solid",
-    all: "All",
   },
   {
     id: 16,
@@ -132,7 +117,6 @@ export const iconData = [
     icon: <PiIcon.PiBriefcaseBold />,
     category: "Classic",
     filter: "Light",
-    all: "All",
   },
   {
     id: 17,
@@ -140,7 +124,6 @@ export const iconData = [
     icon: <PiIcon.PiBowlFoodBold />,
     category: "Classic",
     filter: "Regular",
-    all: "All",
   },
   {
     id: 18,
@@ -148,7 +131,6 @@ export const iconData = [
     icon: <PiIcon.PiBatteryFullBold />,
     category: "Classic",
     filter: "Thin",
-    all: "All",
   },
   {
     id: 19,
@@ -156,7 +138,6 @@ export const iconData = [
     icon: <PiIcon.PiCarProfileBold />,
     category: "Classic",
     filter: "Light",
-    all: "All",
   },
   {
     id: 20,
@@ -164,7 +145,6 @@ export const iconData = [
     icon: <PiIcon.PiCalendarBold />,
     category: "Classic",
     filter: "Thin",
-    all: "All",
   },
   {
     id: 21,
@@ -172,7 +152,6 @@ export const iconData = [
     icon: <PiIcon.PiButterflyBold />,
     category: "Classic",
     filter: "Regular",
-    all: "All",
   },
   {
     id: 22,
@@ -180,7 +159,6 @@ export const iconData = [
     icon: <PiIcon.PiClosedCaptioningBold />,
     category: "Classic",
     filter: "Solid",
-    all: "All",
   },
   {
     id: 23,
@@ -188,7 +166,6 @@ export const iconData = [
     icon: <PiIcon.PiCurrencyDollarBold />,
     category: "Classic",
     filter: "Solid",
-    all: "All",
   },
   {
     id: 24,
@@ -196,7 +173,6 @@ export const iconData = [
     icon: <AiIcon.AiFillAlert />,
     category: "Sharp",
     filter: "Regular",
-    all: "All",
   },
   {
     id: 25,
@@ -204,7 +180,6 @@ export const iconData = [
     icon: <AiIcon.AiFillCheckCircle />,
     category: "Sharp",
     filter: "Light",
-    all: "All",
   },
   {
     id: 26,
@@ -212,7 +187,6 @@ export const iconData = [
     icon: <AiIcon.AiFillCodeSandboxCircle />,
     category: "Sharp",
     filter: "Thin",
-    all: "All",
   },
   {
     id: 27,
@@ -220,7 +194,6 @@ export const iconData = [
     icon: <AiIcon.AiFillCloseSquare />,
     category: "Sharp",
     filter: "Light",
-    all: "All",
   },
   {
     id: 28,
@@ -228,7 +201,6 @@ export const iconData = [
     icon: <AiIcon.AiFillDollarCircle />,
     category: "Sharp",
     filter: "Regular",
-    all: "All",
   },
   {
     id: 29,
@@ -236,7 +208,6 @@ export const iconData = [
     icon: <AiIcon.AiFillEye />,
     category: "Sharp",
     filter: "Solid",
-    all: "All",
   },
   {
     id: 30,
@@ -244,7 +215,6 @@ export const iconData = [
     icon: <AiIcon.AiFillHeart />,
     category: "Sharp",
     filter: "Thin",
-    all: "All",
   },
   {
     id: 31,
@@ -252,7 +222,6 @@ export const iconData = [
     icon: <AiIcon.AiFillInfoCircle />,
     category: "Sharp",
     filter: "Solid",
-    all: "All",
   },
   {
     id: 32,
@@ -260,7 +229,6 @@ export const iconData = [
     icon: <AiIcon.AiFillQuestionCircle />,
     category: "Sharp",
     filter: "Solid",
-    all: "All",
   },
   {
     id: 33,
@@ -268,7 +236,6 @@ export const iconData = [
     icon: <AiIcon.AiFillSafetyCertificate />,
     category: "Sharp",
     filter: "Regular",
-    all: "All",
   },
   {
     id: 34,
@@ -276,7 +243,6 @@ export const iconData = [
     icon: <AiIcon.AiFillRobot />,
     category: "Sharp",
     filter: "Thin",
-    all: "All",
   },
   {
     id: 35,
@@ -284,7 +250,6 @@ export const iconData = [
     icon: <AiIcon.AiFillShopping />,
     category: "Sharp",
     filter: "Regular",
-    all: "All",
   },
   {
     id: 36,
@@ -292,7 +257,6 @@ export const iconData = [
     icon: <AiIcon.AiFillVideoCamera />,
     category: "Sharp",
     filter: "Light",
-    all: "All",
   },
   {
     id: 37,
@@ -300,7 +264,6 @@ export const iconData = [
     icon: <CiIcon.CiAlarmOn />,
     category: "Free",
     filter: "Regular",
-    all: "All",
   },
   {
     id: 38,
@@ -308,7 +271,6 @@ export const iconData = [
     icon: <CiIcon.CiApple />,
     category: "Free",
     filter: "Light",
-    all: "All",
   },
   {
     id: 39,
@@ -316,7 +278,6 @@ export const iconData = [
     icon: <CiIcon.CiAvocado />,
     category: "Free",
     filter: "Light",
-    all: "All",
   },
   {
     id: 40,
@@ -324,7 +285,6 @@ export const iconData = [
     icon: <CiIcon.CiCalculator1 />,
     category: "Free",
     filter: "Solid",
-    all: "All",
   },
   {
     id: 41,
@@ -332,7 +292,6 @@ export const iconData = [
     icon: <CiIcon.CiDeliveryTruck />,
     category: "Free",
     filter: "Regular",
-    all: "All",
   },
   {
     id: 42,
@@ -340,7 +299,6 @@ export const iconData = [
     icon: <CiIcon.CiGlobe />,
     category: "Free",
     filter: "Solid",
-    all: "All",
   },
   {
     id: 43,
@@ -348,7 +306,6 @@ export const iconData = [
     icon: <CiIcon.CiFries />,
     category: "Free",
     filter: "Regular",
-    all: "All",
   },
   {
     id: 44,
@@ -356,7 +313,6 @@ export const iconData = [
     icon: <CiIcon.CiMail />,
     category: "Free",
     filter: "Solid",
-    all: "All",
   },
   {
     id: 45,
@@ -364,7 +320,6 @@ export const iconData = [
     icon: <CiIcon.CiMemoPad />,
     category: "Free",
     filter: "Thin",
-    all: "All",
   },
   {
     id: 46,
@@ -372,7 +327,6 @@ export const iconData = [
     icon: <CiIcon.CiRainbow />,
     category: "Free",
     filter: "Thin",
-    all: "All",
   },
   {
     id: 47,
@@ -380,7 +334,6 @@ export const iconData = [
     icon: <CiIcon.CiSettings />,
     category: "Free",
     filter: "Solid",
-    all: "All",
   },
   {
     id: 48,
@@ -388,6 +341,5 @@ export const iconData = [
     icon: <CiIcon.CiTrash />,
     category: "Free",
     filter: "Solid",
-    all: "All",
   },
 ];
