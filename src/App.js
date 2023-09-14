@@ -27,12 +27,12 @@ function App() {
     <React.Fragment>
       <header>
         <NavBar />
-        <NavBarBody updateSharedData={updateSharedData} dataFromDrawerToNav={dataFromDrawerToNav}/>
+        <NavBarBody updateSharedData={updateSharedData} />
       </header>
       <main className="bg-gray-200 flex justify-center items-center pt-10">
         <div className="flex w-[1600px] gap-4">
           <div className="w-[330px] h-screen p-3">
-            <SideDrawerFilter updateSharedDataFromDrawerToNavBody={updateSharedDataFromDrawerToNavBody}/>
+            <SideDrawerFilter />
           </div>
           <div className="w-[100%]">
             <MainContent sharedData={sharedData} />

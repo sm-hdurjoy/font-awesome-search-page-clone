@@ -34,8 +34,6 @@ const NavBarBody = (props) => {
   const [filteredItems, setFilteredItems] = useState(iconData);
   const { updateSharedData, dataFromDrawerToNav } = props;
 
-  // console.log(dataFromDrawerToNav);
-
   // Sending data to <App /> and then eventually to <MainContent />
   const handleFilterButtonClick = (category) => {
     if (selectedCategory.includes(category)) {

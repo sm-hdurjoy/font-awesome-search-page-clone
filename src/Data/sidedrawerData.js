@@ -4,25 +4,25 @@ import { CiCircleAlert, CiCircleMore } from "react-icons/ci";
 export const sideDrawerData = [
   {
     id: 1,
-    category: "Solid",
+    filter: "Solid",
     icon: <BiSolidCircle />,
     numberOfIcons: 14,
   },
   {
     id: 2,
-    category: "Regular",
+    filter: "Regular",
     icon: <BiSolidAdjust />,
     numberOfIcons: 13,
   },
   {
     id: 3,
-    category: "Light",
+    filter: "Light",
     icon: <CiCircleAlert />,
     numberOfIcons: 10,
   },
   {
     id: 4,
-    category: "Thin",
+    filter: "Thin",
     icon: <CiCircleMore />,
     numberOfIcons: 11,
   },

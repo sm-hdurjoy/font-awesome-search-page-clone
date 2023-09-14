@@ -8,6 +8,7 @@ const style = {
   filterContainer: `flex justify-between px-4 mt-2 mb-1 items-center p-1 rounded-xl hover:border-2 hover:border-gray-300 text-gray-600 border-2 border-gray-200 cursor-pointer`,
   filterSubContainer: `flex justify-center items-center`,
   filterHeaderTitle: `font-bold text-sm text-gray-500 tracking-widest`,
+  active: `flex bg-blue-800 text-white justify-between px-4 mt-2 mb-1 items-center p-1 rounded-xl hover:border-2 hover:border-gray-300 text-gray-600 border-2 border-gray-200 cursor-pointer`
 };
 
 const SideDrawerFilter = (props) => {
@@ -16,11 +17,6 @@ const SideDrawerFilter = (props) => {
 
   const { updateSharedDataFromDrawerToNavBody } = props;
 
-  // const handleFilterButtonClick = (filter) => {
-  //   const dataToSend = filter;
-  //   updateSharedDataFromDrawerToNavBody(dataToSend);
-  // };
-
   const handleFilterButtonClick = (filter) => {
     if (selectedFilters.includes(filter)) {
       let filters = selectedFilters.filter((element) => element !== filter);
@@ -28,8 +24,25 @@ const SideDrawerFilter = (props) => {
     } else {
       setSelectedFilters([...selectedFilters, filter]);
     }
-    updateSharedDataFromDrawerToNavBody(selectedFilters);
   };
+
+  useEffect(() => {
+    filterItems();
+  }, [selectedFilters]);
+
+  const filterItems = () => {
+    if (selectedFilters.length > 0) {
+      let tempItems = selectedFilters.map((filter) => {
+        let temp = iconData.filter((item) => item.filter === filter);
+        return temp;
+      });
+      setFilteredItems(tempItems.flat());
+    } else {
+      setFilteredItems([...iconData]);
+    }
+  };
+
+  console.log(filteredItems);
 
   return (
     <div>
@@ -40,14 +53,18 @@ const SideDrawerFilter = (props) => {
             {sideDrawerData.map((items) => (
               <div
                 key={items.id}
-                className={style.filterContainer}
+                className={`${
+                  selectedFilters?.includes(items.filter)
+                    ? `${style.active}`
+                    : style.filterContainer
+                }`}
                 onClick={() => {
-                  handleFilterButtonClick(items.category);
+                  handleFilterButtonClick(items.filter);
                 }}
               >
                 <div className={style.filterSubContainer}>
                   <div className="mr-4">{items.icon}</div>
-                  <div>{items.category}</div>
+                  <div>{items.filter}</div>
                 </div>
                 <div>{items.numberOfIcons}</div>
               </div>
