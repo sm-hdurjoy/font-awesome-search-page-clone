@@ -19,32 +19,31 @@ const style = {
   searchInputBoxContainer: `flex border-2 border-black p-4 rounded-full items-center justify-center active:border-2 active:border-blue-600`,
   allFilterContainer: `flex justify-between items-center mt-10 mx-8 gap-10 xl:flex-row flex-col-reverse`,
   primaryFilterContainer: `flex justify-center items-center 2xl:mr-96 cursor-pointer`,
-  primaryFilterOptions: `flex flex-col justify-center items-center px-10 py-6 mx-1.5 border-b-4 border-white hover:border-blue-800 hover:text-blue-800`,
+  primaryFilterOptions: `border-white flex flex-col justify-center items-center px-10 py-6 mx-1.5 border-b-4 hover:border-blue-800 hover:text-blue-800`,
   displayFilterOptionsContainer: `flex sm:justify-between`,
   showFiltersOptions: `flex justify-center items-center border-2 rounded-xl px-6 text-blue-600 hover:border-blue-800 xl:hidden`,
   displayOptionsContainer: `flex items-center justify-center m-2`,
   displayLayoutFilter: `px-4 py-2 rounded-xl hover:text-blue-800 cursor-pointer`,
   dropDownContainer: `flex justify-center items-center rounded-lg`,
+  active: `border-b-4 border-blue-800 text-blue-800 flex flex-col justify-center items-center px-10 py-6 mx-1.5`,
 };
 
 const NavBarBody = (props) => {
   const [selectedCategory, setSelectedCategory] = useState([]);
+  const [sortedData, setSortedData] = useState();
   const [filteredItems, setFilteredItems] = useState(iconData);
-  // let filters = ["Classic", "Sharp", "Brand", "Free"];
+  const { updateSharedData, dataFromDrawerToNav } = props;
 
-  const { updateSharedData } = props;
+  // console.log(dataFromDrawerToNav);
 
   // Sending data to <App /> and then eventually to <MainContent />
   const handleFilterButtonClick = (category) => {
     if (selectedCategory.includes(category)) {
-      let filters = selectedCategory.filter(
-        (element) => element !== category
-      );
+      let filters = selectedCategory.filter((element) => element !== category);
       setSelectedCategory(filters);
     } else {
       setSelectedCategory([...selectedCategory, category]);
     }
-    console.log(selectedCategory);
   };
 
   useEffect(() => {
@@ -54,9 +53,7 @@ const NavBarBody = (props) => {
   const filterItems = () => {
     if (selectedCategory.length > 0) {
       let tempItems = selectedCategory.map((category) => {
-        let temp = iconData.filter(
-          (item) => item.category === category
-        );
+        let temp = iconData.filter((item) => item.category === category);
         return temp;
       });
       setFilteredItems(tempItems.flat());
@@ -64,7 +61,23 @@ const NavBarBody = (props) => {
       setFilteredItems([...iconData]);
     }
   };
-  updateSharedData(filteredItems);
+
+  const [sortOption, setSortOption] = useState("Featured");
+  const handleSortOptionChange = (selectedOption) => {
+    setSortOption(selectedOption.value);
+  };
+
+  useEffect(() => {
+    if (sortOption === "Alphabatic") {
+      setSortedData(
+        [...filteredItems].sort((a, b) => a.title.localeCompare(b.title))
+      );
+    } else {
+      setSortedData(filteredItems);
+    }
+  }, [sortOption, filteredItems]);
+
+  updateSharedData(sortedData);
 
   // DropDown menu options initialization
   const options = ["Featured", "Alphabatic"];
@@ -91,7 +104,11 @@ const NavBarBody = (props) => {
             {filterData.map((items) => (
               <button
                 key={items.id}
-                className={style.primaryFilterOptions}
+                className={`${
+                  selectedCategory?.includes(items.category)
+                    ? `${style.active} border-blue-800 text-blue-800`
+                    : style.primaryFilterOptions
+                }`}
                 onClick={() => {
                   handleFilterButtonClick(items.category);
                 }}
@@ -124,7 +141,7 @@ const NavBarBody = (props) => {
                 options={options}
                 value={defaultOption}
                 placeholder="Featured"
-                // onChange={handleOptionChange}
+                onChange={handleSortOptionChange}
               />
 
               <Dropdown
