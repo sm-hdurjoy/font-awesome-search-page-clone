@@ -14,7 +14,7 @@ const styleLargeScreen = {
   navElements: `px-4 py-2.5 hover:text-blue-700 text-gray-500 cursor-pointer mx-1.5`,
 };
 
-// Tailwind Style Variable Object
+// Tailwind Style Variable Object for mobile screen responsiveness
 const styleSmallScreen = {
   navMainContainer: `md:flex  w-full justify-center items-center py-4`,
   navElements: `p-2 border-b-2 w-[90%] flex justify-center`,
@@ -24,6 +24,7 @@ const NavBar = () => {
   // BurgerMenu state variable to check if burgermenu icon should appear or not
   const [menuOpen, setMenuOpen] = useState(true);
 
+  // function to handle burger menu click and state variable change
   const handleMenuOpen = () => {
     setMenuOpen(!menuOpen);
   };
@@ -60,9 +61,6 @@ const NavBar = () => {
               <FaSkullCrossbones className="cursor-pointer" size={35} />
             )}
           </button>
-          {/* <div className="md:mr-8 py-1 px-3 rounded-xl cursor-pointer">
-            <FaFontAwesomeFlag size={35} />
-          </div> */}
         </div>
         <div className="lg:ml-80 md:ml-0 px-3 py-1 rounded-xl cursor-pointer">
           <PiSignInBold size={35} />

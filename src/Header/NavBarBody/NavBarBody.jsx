@@ -9,8 +9,10 @@ import "react-dropdown/style.css";
 import { HiSearch } from "react-icons/hi";
 import { BsFillGridFill, BsFillGrid3X3GapFill, BsListUl } from "react-icons/bs";
 import { BsFilter } from "react-icons/bs";
-import { iconData } from "../../Data/iconData.js";
 import { filterData } from "../../Data/filterData.js";
+
+// Data import
+import { iconData } from "../../Data/iconData.js";
 
 // Tailwind Style Variable Object
 const style = {
@@ -29,12 +31,19 @@ const style = {
 };
 
 const NavBarBody = (props) => {
-  const [selectedCategory, setSelectedCategory] = useState([]);
-  const [sortedData, setSortedData] = useState();
-  const [filteredItems, setFilteredItems] = useState(iconData);
-  const { updateSharedData, dataFromDrawerToNav } = props;
+  // Receiving update function from props to update data to App component
+  const { updateSharedDataFromNavBarBody } = props;
 
-  // Sending data to <App /> and then eventually to <MainContent />
+  // State variable to keep tract of which clicked is clicked/multiSelected
+  const [selectedCategory, setSelectedCategory] = useState([]);
+
+  // State variable to filter data according to selected/multi selected categories
+  const [filteredItems, setFilteredItems] = useState(iconData);
+
+  // State variable to sort data according to the sorting selection
+  const [sortedData, setSortedData] = useState();
+
+  // function to keep tract  which categories has been selected to sort icon elements
   const handleFilterButtonClick = (category) => {
     if (selectedCategory.includes(category)) {
       let filters = selectedCategory.filter((element) => element !== category);
@@ -44,10 +53,13 @@ const NavBarBody = (props) => {
     }
   };
 
+  // useEffect to invoke whenever the selectedCategory data state is changed
   useEffect(() => {
+    // filterItems called to filter icon data according to clicked/multi Selected categories from nav menu
     filterItems();
   }, [selectedCategory]);
 
+  // Functiuon to filter through the data according to the selected categories to show icons on display
   const filterItems = () => {
     if (selectedCategory.length > 0) {
       let tempItems = selectedCategory.map((category) => {
@@ -60,28 +72,37 @@ const NavBarBody = (props) => {
     }
   };
 
+  // State variable to keep track of sorting option selection
   const [sortOption, setSortOption] = useState("Featured");
+
+  // Function to handle when the sort option changes
   const handleSortOptionChange = (selectedOption) => {
     setSortOption(selectedOption.value);
   };
 
+  // Sorting data according to the sort option selection
+  // useEffect invoked whenever the sorting option selection changed
   useEffect(() => {
     if (sortOption === "Alphabatic") {
       setSortedData(
+        // Sorting filtered data alphabatically if (Sort option === Alphabati)c
         [...filteredItems].sort((a, b) => a.title.localeCompare(b.title))
       );
     } else {
+      // Otherwise keeping the existing data without any sort
       setSortedData(filteredItems);
     }
   }, [sortOption, filteredItems]);
 
-  updateSharedData(sortedData);
+  // after the data has been filtered according to the selected filters/sorting options,
+  // data is passed to App component and then to MainContent to show on screen
+  updateSharedDataFromNavBarBody(sortedData);
 
-  // DropDown menu options initialization
+  // DropDown menu-1 options initialization
   const options = ["Featured", "Alphabatic"];
   const defaultOption = options[0];
 
-  // DropDown menu options initialization
+  // DropDown menu-2 options initialization
   const versionOptions = ["6.4.2", "5.15.4", "All Versions"];
   const defaultVersionOption = versionOptions[0];
 
